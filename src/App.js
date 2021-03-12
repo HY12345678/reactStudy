@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import MyState from './components/mystate';
+import HandleEvent from './components/handleEvent';
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state ={
+      test:"测试props修改"
+    }
+  }
+  
+   changeProps = ()=>{
+    this.setState({
+      test: 'props已被修改'
+    })
+  }
+
+  render() {
+    let arr = [1,2,3];
+    let isStudy = true;
+    return (
+      <div>
+        <div className="App">
+      <MyState test={this.state.test} changeProps={this.changeProps}></MyState>
+  
+        <HandleEvent
+          arr={arr}
+          isStudy={isStudy}
+         onClick={() =>{console.log('点击了点击了')}} />
+     
+    
+      
     </div>
-  );
+      </div>
+    )
+  }
 }
-
-export default App;
