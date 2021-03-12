@@ -1,8 +1,10 @@
+import React, { Component } from 'react'
 import './App.css';
 import MyState from './components/mystate';
 import HandleEvent from './components/handleEvent';
-import React, { Component } from 'react'
 
+import LifeCircle from './components/lifeCircle';
+import Form from './components/form'
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -25,11 +27,12 @@ export default class App extends Component {
         <div className="App">
       <MyState test={this.state.test} changeProps={this.changeProps}></MyState>
   
-        <HandleEvent
-          arr={arr}
-          isStudy={isStudy}
-         onClick={() =>{console.log('点击了点击了')}} />
-     
+      <HandleEvent
+        arr={arr}
+        isStudy={isStudy}
+        onClick={() =>{console.log('点击了点击了')}} />
+      {/* 生命周期 */}
+      <LifeCircle />
     
       
     </div>
