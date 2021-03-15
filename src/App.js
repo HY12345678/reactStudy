@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
 import './App.css';
-import MyState from './components/mystate';
-import HandleEvent from './components/handleEvent';
-
-import LifeCircle from './components/lifeCircle';
-import Form from './components/form'
+// import MyState from './components/mystate';
+// import HandleEvent from './components/handleEvent';
+import React, { Component } from 'react';
+// import FormParent from "./FormParent"
+// import MyRef from "./components/myRef"
+import Upload from "./components/upload"
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -17,24 +17,35 @@ export default class App extends Component {
     this.setState({
       test: 'props已被修改'
     })
+  };
+  handleClick=() => {
+    this.myfocus.current.focus()
   }
 
   render() {
-    let arr = [1,2,3];
-    let isStudy = true;
+    // let arr = [1,2,3];
+    // let isStudy = true;
     return (
       <div>
         <div className="App">
-      <MyState test={this.state.test} changeProps={this.changeProps}></MyState>
+      {/* <MyState test={this.state.test} changeProps={this.changeProps}></MyState>
   
-      <HandleEvent
-        arr={arr}
-        isStudy={isStudy}
-        onClick={() =>{console.log('点击了点击了')}} />
-      {/* 生命周期 */}
-      <LifeCircle />
-    
-      
+        <HandleEvent
+          arr={arr}
+          isStudy={isStudy}
+         onClick={() =>{console.log('点击了点击了')}} />
+      */}
+        {/* 受控与非受控组件 */}
+        {/* <FormParent /> */}
+
+        {/* ref */}
+        {/* <MyRef onRef={(ref)=> this.myfocus = ref}/>
+        <br />
+        <br />
+        <button onClick={this.handleClick}>点我获得焦点</button> */}
+
+        {/* 上传文件案例 */}
+        <Upload />      
     </div>
       </div>
     )

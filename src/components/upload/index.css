@@ -1,0 +1,26 @@
+.upload{
+
+}
+.img{
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+}
+.img.add {
+    position: relative;
+    border: 1px dashed #0e29d4;
+}
+.img.add input[type="file"] {
+    /* position: absolute;
+    left: 0;
+    top: 0; */
+    opacity: 0;
+}
+.img.add::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-size: 60px;
+}
